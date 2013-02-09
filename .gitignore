@@ -15,3 +15,6 @@
 _ReSharper.*/
 bin/
 *.user
+/ionmonkey
+
+/Binaries
