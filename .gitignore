@@ -1,0 +1,17 @@
+*resharper.user
+# Visual Studio
+[Dd]ebug/
+[Rr]elease/
+*.sln.cache
+*.suo
+*.csproj.user
+*.TeamCity.user
+*.DotSettings.user
+*.ncb
+*.sdf
+*.opensdf
+# Resharper
+*[Rr]e[Ss]harper.user
+_ReSharper.*/
+bin/
+*.user
