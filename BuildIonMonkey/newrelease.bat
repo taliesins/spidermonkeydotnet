@@ -1,5 +1,9 @@
 @echo off
 
+
+SET python=%~dp0%third_party\python_274\python.exe
+
+
 cmd /c start-msvc9
 if errorlevel 1 goto error
 cmd /c start-msvc9-x64
@@ -23,19 +27,20 @@ if errorlevel 1 goto error
 
 
 if exist %reldir% rmdir /s /q "ionmonkey"
-xcopy /e "%ionmonkeydir%\nsprpub\build-release-net35-amd64\dist\*.*" "ionmonkey\Net35\amd64\nsprpub\"
-xcopy /e "%ionmonkeydir%\nsprpub\build-release-net35-x86\dist\bin\*.*" "ionmonkey\Net35\x86\nsprpub\"
-xcopy /e "%ionmonkeydir%\nsprpub\build-release-net40-amd64\dist\bin\*.*" "ionmonkey\Net40\amd64\nsprpub\"
-xcopy /e "%ionmonkeydir%\nsprpub\build-release-net40-x86\dist\bin\*.*" "ionmonkey\Net40\x86\nsprpub\"
-xcopy /e "%ionmonkeydir%\nsprpub\build-release-net45-amd64\dist\bin\*.*" "ionmonkey\Net45\amd64\nsprpub\"
-xcopy /e "%ionmonkeydir%\nsprpub\build-release-net45-x86\dist\bin\*.*" "ionmonkey\Net45\x86\nsprpub\"
 
-xcopy /e "%ionmonkeydir%\js\src\build-release-net35-amd64\dist\*.*" "ionmonkey\Net35\amd64\js\"
-xcopy /e "%ionmonkeydir%\js\src\build-release-net35-x86\dist\*.*" "ionmonkey\Net35\x86\js\"
-xcopy /e "%ionmonkeydir%\js\src\build-release-net40-amd64\dist\*.*" "ionmonkey\Net40\amd64\js\"
-xcopy /e "%ionmonkeydir%\js\src\build-release-net40-x86\dist\*.*" "ionmonkey\Net40\x86\js\"
-xcopy /e "%ionmonkeydir%\js\src\build-release-net45-amd64\dist\*.*" "ionmonkey\Net45\amd64\js\"
-xcopy /e "%ionmonkeydir%\js\src\build-release-net45-x86\dist\*.*" "ionmonkey\Net45\x86\js\"
+xcopy /e "%ionmonkeydir%\nsprpub\build-release-net35-amd64\dist\*.*" "vs2008\Net35\x64\nsprpub\"
+xcopy /e "%ionmonkeydir%\nsprpub\build-release-net35-x86\dist\bin\*.*" "vs2008\Net35\win32\nsprpub\"
+xcopy /e "%ionmonkeydir%\nsprpub\build-release-net40-amd64\dist\bin\*.*" "vs2010\Net40\x64\nsprpub\"
+xcopy /e "%ionmonkeydir%\nsprpub\build-release-net40-x86\dist\bin\*.*" "vs2010\Net40\win32\nsprpub\"
+xcopy /e "%ionmonkeydir%\nsprpub\build-release-net45-amd64\dist\bin\*.*" "vs2012\Net45\x64\nsprpub\"
+xcopy /e "%ionmonkeydir%\nsprpub\build-release-net45-x86\dist\bin\*.*" "vs2012\Net45\win32\nsprpub\"
+
+xcopy /e "%ionmonkeydir%\js\src\build-release-net35-amd64\dist\*.*" "vs2008\Net35\x64\js\"
+xcopy /e "%ionmonkeydir%\js\src\build-release-net35-x86\dist\*.*" "vs2008\Net35\win32\js\"
+xcopy /e "%ionmonkeydir%\js\src\build-release-net40-amd64\dist\*.*" "vs2010\Net40\x64\js\"
+xcopy /e "%ionmonkeydir%\js\src\build-release-net40-x86\dist\*.*" "vs2010\Net40\win32\js\"
+xcopy /e "%ionmonkeydir%\js\src\build-release-net45-amd64\dist\*.*" "vs2012\Net45\x64\js\"
+xcopy /e "%ionmonkeydir%\js\src\build-release-net45-x86\dist\*.*" "vs2012\Net45\win32\js\"
 
 mkdir "%reldir%\lib"
 mkdir "%reldir%\lib\Net35"
